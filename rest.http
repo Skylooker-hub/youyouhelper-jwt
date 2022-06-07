@@ -1,0 +1,10 @@
+POST http://127.0.0.1:7001/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU1MzhiMTYyLTMxMDUtNGVkYS05MzY0LTg2OTQyZjIxZWZjMiIsImlhdCI6MTY1NDE5NTY1NywiZXhwIjoxNjU0MTk2MjU3fQ._ZFeBi5p9752Mxt2357pslnJNIA0zMv8WTikvqaRDbE
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="youyouDb_ER.png"
+Content-Type: image/png
+
+< ./youyouDb_ER.png
+------WebKitFormBoundary7MA4YWxkTrZu0gW--

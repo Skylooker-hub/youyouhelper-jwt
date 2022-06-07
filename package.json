@@ -1,0 +1,62 @@
+{
+  "name": "youyou-helper",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with Fastify-CLI.",
+  "main": "app.ts",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm run build:ts && tsc -p test/tsconfig.json && tap --ts test/**/*.test.ts",
+    "start": "npm run build:ts && fastify start -l info dist/app.js",
+    "build:ts": "tsc",
+    "build:key": "node scripts/genkey.js > secret-key",
+    "dev": "tsc && NODE_ENV=dev concurrently -k -p \"[{name}]\" -n \"TypeScript,App\" -c \"yellow.bold,cyan.bold\" \"tsc -w\" \"fastify start -o --ignore-watch=.ts$ -w -l info -P dist/app.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/auth": "^2.0.0",
+    "@fastify/autoload": "^4.0.0",
+    "@fastify/jwt": "^5.0.1",
+    "@fastify/multipart": "^6.0.0",
+    "@fastify/passport": "^1.0.1",
+    "@fastify/redis": "^5.0.0",
+    "@fastify/secure-session": "^4.1.1",
+    "@fastify/sensible": "^4.0.0",
+    "@fastify/static": "^5.0.2",
+    "@fastify/swagger": "^6.0.1",
+    "@prisma/client": "^3.14.0",
+    "@sinclair/typebox": "^0.23.5",
+    "bcrypt": "^5.0.1",
+    "fastify": "^3.0.0",
+    "fastify-cli": "^2.15.0",
+    "fastify-mailer": "^2.3.1",
+    "fastify-plugin": "^3.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "nodemailer": "^6.7.5",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "pump": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/ioredis": "^4.28.10",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^17.0.8",
+    "@types/nodemailer": "^6.4.4",
+    "@types/passport-jwt": "^3.0.6",
+    "@types/passport-local": "^1.0.34",
+    "@types/pump": "^1.1.1",
+    "@types/tap": "^15.0.5",
+    "concurrently": "^7.0.0",
+    "fastify-tsconfig": "^1.0.1",
+    "nodemon": "^2.0.15",
+    "prisma": "^3.14.0",
+    "sodium-native": "^3.3.0",
+    "tap": "^15.1.6",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  }
+}
